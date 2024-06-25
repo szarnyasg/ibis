@@ -507,10 +507,9 @@ c = px.bar(
     t.group_by("system").agg(
         total_seconds=t["execution_seconds"].sum(),
         seconds_per_query=t["execution_seconds"].mean(),
-        num_records=t.count(),
     ),
     x="system",
-    y="num_records",
+    y="total_seconds",
     color="system",
     category_orders={"system": systems},
     title="total execution time by system",
